@@ -1,11 +1,13 @@
 #!/usr/bin/python
 from flask import Flask
 from flask import Response
+import time
+
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    with open("2017-10-19", "r") as f:
+    with open(time.strftime("%Y-%m-%d"), "r") as f:
         content = f.read()
     return Response(content, mimetype='text/plain')
 
