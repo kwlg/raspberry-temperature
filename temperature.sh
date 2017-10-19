@@ -19,4 +19,5 @@ TEMPERATURE=$(cat ${DEV_FILE} | tail -n1 | awk '{print $10}')
 TEMPERATURE="${TEMPERATURE:2:2}.${TEMPERATURE:4:7}"
 TIME=`date "+%H:%M:%S"`
 
-echo "${TIME},${TEMPERATURE},"
+FILE_NAME=`date "+%Y-%m-%d"`
+echo "${TIME},${TEMPERATURE}," >> ~/raspberry-temperature/${FILE_NAME}
