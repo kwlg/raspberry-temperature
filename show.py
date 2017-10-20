@@ -7,15 +7,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    with open(time.strftime("%Y-%m-%d"), "r") as f:
-        content = f.read()
+    content = plot()
     return Response(content, mimetype='text/plain')
 
 
 def plot():
     min=-5
     max=30
-    plotlines = [[str(i).zfill(2)] for i in range(max,min,-1)]
+    plotlines = [['{0:>3} '.format(i)] for i in range(max,min,-1)]
     print plotlines
 
     with open(time.strftime("%Y-%m-%d"), "r") as f:
