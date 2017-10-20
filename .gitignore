@@ -1,1 +1,4 @@
 *.pyc
+temperature_plot.txt
+set_temp_cron
+20*-*-*
