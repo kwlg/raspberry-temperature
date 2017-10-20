@@ -53,6 +53,7 @@ do
     echo ""
 done
 
-echo -e "\nCurrent: ${TEMPERATURES[-1]} C\n"
+echo -e "\nCurrent: ${TEMPERATURES[-1]} C"
 echo "Min: ${MIN_TEMP} C"
 echo "Max: ${MAX_TEMP} C"
+echo "Number of measurements: ${#TEMPERATURES[@]}"
