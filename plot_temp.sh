@@ -9,7 +9,7 @@ TEMPERATURES=()
 # Loop through the file
 while read LINE
 do
-    CONTENTS=`echo ${LINE} | cut -d, -f2-`
+    CONTENTS=`echo ${LINE} | cut -d, -f2`
     CONTENTS=`printf "%.*f\n" 0 ${CONTENTS::-1}`
     TEMPERATURES+=(${CONTENTS})
 
