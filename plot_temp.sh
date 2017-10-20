@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-# Specify max and min temperatures
-MIN_RANGE=5
-MAX_RANGE=30
-RANGE=$((${MAX_RANGE} - ${MIN_RANGE}))
-
 # The file name to read from
 FILE_NAME=`date "+%Y-%m-%d"`
 
@@ -35,6 +30,11 @@ do
     fi
 
 done < ${FILE_NAME}
+
+# Specify max and min temperatures
+MIN_RANGE=$((${MIN_TEMP} - 1))
+MAX_RANGE=$((${MAX_TEMP} + 1))
+RANGE=$((${MAX_RANGE} - ${MIN_RANGE}))
 
 # Loop over the temperature range and the temperatures
 for I in `seq 0 ${RANGE}`
