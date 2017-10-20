@@ -20,7 +20,7 @@ do
 done < ${FILE_NAME}
 
 # Loop over the temperature range and the temperatures
-for I in `seq 1 ${RANGE}`
+for I in `seq 0 ${RANGE}`
 do
     printf "%3d " $((${MAX_TEMP} - ${I}))
 
