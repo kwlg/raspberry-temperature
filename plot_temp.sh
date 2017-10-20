@@ -22,6 +22,8 @@ done < ${FILE_NAME}
 # Loop over the temperature range and the temperatures
 for I in `seq 1 ${RANGE}`
 do
+    printf "%3d " $((${MAX_TEMP} - ${I}))
+
     for TEMP in ${TEMPERATURES[*]}
     do
         if [ $((${MAX_TEMP} - ${I})) -eq ${TEMP} ]
